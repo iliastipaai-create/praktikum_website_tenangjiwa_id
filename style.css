@@ -462,3 +462,151 @@ header {
     }
   }
 }
+
+/* Contact Sections */
+.contact {
+  background-color: var(--bg-white);
+}
+
+.contact-wrapper {
+  align-items: start;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.contact-info > p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.info-item .icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(74, 124, 89, 0.1);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.info-item .details h4 {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+
+.info-item .details p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.operating-hours {
+  background-color: var(--bg-white);
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.operating-hours h4 {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+}
+
+.operating-hours p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.contact-form-container {
+  background-color: var(--bg-white);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textera {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: var(--bg-light);
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textera:focus {
+  border-color:  var(--primary-color);
+  background-color: var(--bg-white);
+  box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.15);
+}
+
+.form-group textera {
+  resize: vertical;
+}
+
+.btn-submit {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+}
+
