@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Skrining Mandiri - TenangJiwa.id</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html#home" class="logo">Tenang <span>Jiwa</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services" class="active">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="services-hero">
+        <div class="container text-center">
+            <h1>Tes Skrining Kesehatan Emosional</h1>
+            <p>Evaluasi mandiri singkat untuk melihat gambaran kondisi psikologismu saat ini.</p>
+        </div>
+    </section>
+
+    <section class="quiz-section sections-padding">
+        <div class="container">
+            <div class="quiz-container">
+                <form id="quizForm">
+                    <div class="quiz-group">
+                        <p class="question">1. Seberapa sering kamu merasa cemas, gelisah, atau cemas berlebihan dalam 2 minggu terakhir?</p>
+                        <label><input type="radio" name="q1" value="0" required> Tidak pernah</label>
+                        <label><input type="radio" name="q1" value="1"> Beberapa hari</label>
+                        <label><input type="radio" name="q1" value="2"> Lebih dari separuh waktu</label>
+                        <label><input type="radio" name="q1" value="3"> Hampir setiap hari</label>
+                    </div>
+
+                    <div class="quiz-group">
+                        <p class="question">2. Seberapa sering kamu merasa lelah atau memiliki sedikit energi untuk beraktivitas?</p>
+                        <label><input type="radio" name="q2" value="0" required> Tidak pernah</label>
+                        <label><input type="radio" name="q2" value="1"> Beberapa hari</label>
+                        <label><input type="radio" name="q2" value="2"> Lebih dari separuh waktu</label>
+                        <label><input type="radio" name="q2" value="3"> Hampir setiap hari</label>
+                    </div>
+
+                    <div class="quiz-group">
+                        <p class="question">3. Apakah kamu kesulitan tidur nyenyak atau justru tidur terlalu banyak?</p>
+                        <label><input type="radio" name="q3" value="0" required> Tidak pernah</label>
+                        <label><input type="radio" name="q3" value="1"> Beberapa hari</label>
+                        <label><input type="radio" name="q3" value="2"> Lebih dari separuh waktu</label>
+                        <label><input type="radio" name="q3" value="3"> Hampir setiap hari</label>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-quiz">Lihat Hasil Skrining</button>
+                </form>
+
+                <div id="quizResult" class="quiz-result hidden">
+                    <h3>Hasil Skrining Kamu:</h3>
+                    <p id="resultText"></p>
+                    <a href="index.html#contact" class="btn-primary">Konsultasikan Hasil Ini</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-box">
+                <a href="index.html" class="logo">Tenang <span>Jiwa</span></a>
+                <p>Platform kesehatan mental terpadu yang siap mendampingi setiap tahapan perjalanan pemulihan dirimu.</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 TenangJiwa.id. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
