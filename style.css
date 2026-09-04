@@ -1,6 +1,7 @@
-/* Reset % Variabel Sistem */
+/* ==========================================
+   1. RESET & VARIABLE SYSTEM
+   ========================================== */
 :root {
-  /* Color Palette - TenangJiwa Theme */
   --primary-color: #4a7c59;
   --primary-hover: #3b6346;
   --secondary-color: #f4a261;
@@ -8,8 +9,6 @@
   --text-light: #6c757d;
   --bg-light: #f8f9fa;
   --bg-white: #ffffff;
-
-  /* Layout & Spacing */
   --transition-fast: all 0.3s ease;
   --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
@@ -30,6 +29,7 @@ body {
   color: var(--text-dark);
   background-color: var(--bg-white);
   line-height: 1.6;
+  padding-top: 0 !important; /* Mencegah bentrokan jarak navbar */
 }
 
 a {
@@ -41,7 +41,9 @@ ul {
   list-style: none;
 }
 
-/* Navbar */
+/* ==========================================
+   2. NAVBAR
+   ========================================== */
 header {
   position: fixed;
   top: 0;
@@ -62,6 +64,9 @@ header {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--primary-color);
@@ -70,6 +75,10 @@ header {
 
 .logo span {
   color: var(--secondary-color);
+}
+
+.logo-icon {
+  font-size: 1.6rem;
 }
 
 .nav-links {
@@ -88,7 +97,6 @@ header {
   color: var(--primary-color);
 }
 
-/* Hamburger Menu (Mobile Toggle) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -104,7 +112,9 @@ header {
   transition: var(--transition-fast);
 }
 
-/* Hero Sections */
+/* ==========================================
+   3. HERO SECTION & BANNER JUDUL (SERTAKAN RATA TENGAH)
+   ========================================== */
 .hero {
   min-height: 100vh;
   background:
@@ -113,7 +123,7 @@ header {
       rgba(248, 249, 250, 0.95),
       rgba(233, 245, 238, 0.8)
     ),
-    url("[https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1600&auto=format&fit=crop](https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1600&auto=format&fit=crop)")
+    url("https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1600&auto=format&fit=crop")
       center/cover no-repeat;
   display: flex;
   justify-content: center;
@@ -140,6 +150,33 @@ header {
   margin-bottom: 2rem;
 }
 
+/* FIX: Banner Halaman Detail Layanan Otomatis Pas di Tengah */
+.services-hero {
+  padding-top: 130px !important;
+  padding-bottom: 3.5rem !important;
+  background-color: #f0f7ff !important;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center !important; /* Memaksa Judul H1 & Paragraf ke Tengah */
+  margin-top: 0 !important;
+  width: 100%;
+}
+
+.services-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 auto 0.8rem auto !important;
+  text-align: center !important;
+}
+
+.services-hero p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 650px;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
 /* Buttons */
 .hero-buttons {
   display: flex;
@@ -158,12 +195,18 @@ header {
   cursor: pointer;
 }
 
-.hero-buttons .btn:first-child {
+.hero-buttons .btn:first-child,
+.btn-primary {
   background-color: var(--primary-color);
   color: var(--bg-white);
+  border-radius: 30px;
+  padding: 0.85rem 1.9rem;
+  font-weight: 700;
+  display: inline-block;
 }
 
-.hero-buttons .btn:first-child:hover {
+.hero-buttons .btn:first-child:hover,
+.btn-primary:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
 }
@@ -180,52 +223,9 @@ header {
   transform: translateY(-2px);
 }
 
-/* Responsif Design (Mobile & Tablet) */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--bg-white);
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem 0;
-    gap: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .btn {
-    width: 100%;
-  }
-}
-
-/* ================================
-   ABOUT SECTION
-================================ */
-
+/* ==========================================
+   4. ABOUT & GENERAL SECTIONS
+   ========================================== */
 .sections-padding {
   padding: 6rem 1.5rem;
 }
@@ -236,9 +236,9 @@ header {
   margin: 0 auto;
 }
 
-/* ================================
-   GRID ABOUT
-================================ */
+.text-center {
+  text-align: center !important;
+}
 
 .grid-2 {
   display: grid;
@@ -246,10 +246,6 @@ header {
   gap: 5rem;
   align-items: center;
 }
-
-/* ================================
-   GAMBAR ABOUT
-================================ */
 
 .about-img {
   width: 100%;
@@ -272,10 +268,6 @@ header {
 .about-img img:hover {
   transform: translateY(-5px);
 }
-
-/* ================================
-   TEXT ABOUT
-================================ */
 
 .about-text {
   max-width: 580px;
@@ -305,20 +297,12 @@ header {
   line-height: 1.8;
 }
 
-/* ================================
-   SUB HEADING
-================================ */
-
 .about-text h3 {
   font-size: 1.35rem;
   color: var(--text-dark);
   margin: 1.8rem 0 0.9rem;
   line-height: 1.4;
 }
-
-/* ================================
-   LIST
-================================ */
 
 .about-text ul {
   margin: 0 0 1.5rem;
@@ -349,10 +333,6 @@ header {
   color: var(--text-dark);
 }
 
-/* ================================
-   QUOTE
-================================ */
-
 .about-quote {
   background-color: var(--bg-light);
   border-left: 4px solid var(--primary-color);
@@ -366,125 +346,15 @@ header {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
 }
 
-/* ================================
-   BUTTON
-================================ */
-
 .about-cta {
   margin-top: 1.8rem;
 }
 
-.btn-primary {
-  display: inline-block;
-  background: var(--primary-color);
-  color: var(--bg-white);
-  padding: 0.85rem 1.9rem;
-  border-radius: 30px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-color);
-  transform: translateY(-2px);
-}
-
-/* ================================
-   RESPONSIVE - TABLET
-================================ */
-
-@media (max-width: 992px) {
-
-  .sections-padding {
-    padding: 5rem 1.5rem;
-  }
-
-  .grid-2 {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .about-img {
-    order: 1;
-  }
-
-  .about-text {
-    order: 2;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .about-img img {
-    max-width: 600px;
-    height: 400px;
-  }
-
-  .about-text h2 {
-    font-size: 2.2rem;
-  }
-}
-
-/* ================================
-   RESPONSIVE - MOBILE
-================================ */
-
-@media (max-width: 576px) {
-
-  .sections-padding {
-    padding: 4rem 1.2rem;
-  }
-
-  .grid-2 {
-    gap: 2.2rem;
-  }
-
-  .about-img img {
-    height: 280px;
-    border-radius: 16px;
-  }
-
-  .about-text h2 {
-    font-size: 1.9rem;
-  }
-
-  .about-text .subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .about-text p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  .about-text h3 {
-    font-size: 1.2rem;
-  }
-
-  .about-text ul li {
-    font-size: 0.92rem;
-  }
-
-  .about-quote {
-    padding: 1.1rem 1.2rem;
-    font-size: 0.92rem;
-  }
-
-  .btn-primary {
-    width: 100%;
-    text-align: center;
-    padding: 0.85rem 1.5rem;
-  }
-}
-
-/* Services Sections  */
+/* ==========================================
+   5. SERVICES & TESTIMONIALS SECTION
+   ========================================== */
 .services {
   background: var(--bg-light);
-}
-
-.text-center {
-  text-align: center;
 }
 
 .section-title {
@@ -510,7 +380,8 @@ header {
   gap: 2rem;
 }
 
-.services-card {
+.services-card,
+.testimonial-card {
   background-color: var(--bg-white);
   padding: 2.5rem 1.8rem;
   border-radius: 16px;
@@ -518,9 +389,7 @@ header {
   transition: var(--transition-fast);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  overflow: hidden;
+  justify-content: space-between;
 }
 
 .services-card:hover {
@@ -552,7 +421,6 @@ header {
   font-size: 0.95rem;
   line-height: 1.5rem;
   margin-bottom: 1.5rem;
-  flex-grow: 1;
 }
 
 .services-link {
@@ -560,37 +428,23 @@ header {
   font-weight: 700;
   font-size: 0.95rem;
   transition: var(--transition-fast);
-  display: inline-flex;
-  align-items: center;
 }
 
 .services-link:hover {
-  color: var(--primary-color);
   letter-spacing: 0.5px;
 }
 
-@media (max-width: 992px) {
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 600px) {
-    .grid-3 {
-      grid-template-columns: 1fr;
-    }
-
-    .section-title h2 {
-      font-size: 1.8rem
-    }
-  }
-}
-
-/* Contact Sections */
+/* ==========================================
+   6. CONTACT SECTION
+   ========================================== */
 .contact {
   background-color: var(--bg-white);
 }
 
 .contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: start;
 }
 
@@ -643,24 +497,6 @@ header {
   font-size: 0.95rem;
 }
 
-.operating-hours {
-  background-color: var(--bg-white);
-  padding: 1.2rem 1.5rem;
-  border-radius: 12px;
-  border-left: 4px solid var(--secondary-color);
-}
-
-.operating-hours h4 {
-  font-size: 0.95rem;
-  color: var(--text-dark);
-  margin-bottom: 0.3rem;
-}
-
-.operating-hours p {
-  color: var(--text-light);
-  font-size: 0.9rem;
-}
-
 .contact-form-container {
   background-color: var(--bg-white);
   padding: 2.5rem;
@@ -688,7 +524,7 @@ header {
 }
 
 .form-group input,
-.form-group textera {
+.form-group textarea {
   width: 100%;
   padding: 0.8rem 1rem;
   font-family: inherit;
@@ -698,46 +534,157 @@ header {
   background-color: var(--bg-light);
   transition: var(--transition-fast);
   outline: none;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 .form-group input:focus,
-.form-group textera:focus {
-  border-color:  var(--primary-color);
+.form-group textarea:focus {
+  border-color: var(--primary-color);
   background-color: var(--bg-white);
   box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.15);
 }
 
-.form-group textera {
-  resize: vertical;
+/* ==========================================
+   7. FOOTER MULTI-KOLOM
+   ========================================== */
+.footer {
+  background-color: #f8fafc;
+  padding: 3rem 0 1.5rem 0;
+  border-top: 1px solid #e2e8f0;
 }
 
-.btn-submit {
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 0.5rem;
-  font-size: 1rem;
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
+.footer-box p {
+  margin-top: 0.8rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.footer-box h4 {
+  font-size: 1.1rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-box ul li a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-box ul li a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid #cbd5e1;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   8. RESPONSIVE DESIGN (TABLET & HP)
+   ========================================== */
 @media (max-width: 992px) {
+  .sections-padding {
+    padding: 5rem 1.5rem;
+  }
+
+  .grid-2,
   .contact-wrapper {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-img {
+    order: 1;
+  }
+
+  .about-text {
+    order: 2;
+    max-width: 700px;
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-white);
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .services-hero {
+    padding-top: 110px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
   .contact-form-container {
     padding: 1.5rem;
   }
 }
-
-body {
-  padding-top: 100px !important;
-}
-
-.services-hero {
-  padding-top: 40px !important;
-  margin-top: 0 !important;
-}
-
